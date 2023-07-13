@@ -20,5 +20,5 @@ spec:
         image: 
         ports:
         - containerPort: 5000
-       imagePullSecrets:
+      imagePullSecrets:
       - name: vineet 
