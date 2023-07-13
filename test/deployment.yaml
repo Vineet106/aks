@@ -12,7 +12,7 @@ spec:
       app: kube
   template:
     metadata:
-      labels: firstacs.azurecr.io/yolo:latest
+      labels: firstacs.azurecr.io/yolo
         app: kube
     spec:
       containers:
