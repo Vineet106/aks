@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubes
+  name: docker
   namespace: vin
   labels:
-    app: kube
+    app: myapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: kube
+      app: myapp
   template:
     metadata:
-      labels: firstacs.azurecr.io/yolo
-        app: kube
+      labels:
+        app: myapp
     spec:
       containers:
-      - name: kube
-        image: 
+      - name: dockerdep-10-app
+        image: firstacs.azurecr.io/dotnet:1.0
         ports:
         - containerPort: 5000
       imagePullSecrets:
-      - name: vineet 
+        - name: vineet

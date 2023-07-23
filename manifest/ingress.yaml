@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dotnetdemo # Use a new name for the Ingress resource
+  namespace: dotnet
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: new-hostname   # Define a new hostname here
+      http:
+        paths:
+          - path: / # Define a new path here
+            pathType: Prefix
+            backend:
+              service:
+                name: dotnetdemo
+                port:
+                  number: 5000
